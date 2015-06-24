@@ -1,10 +1,12 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="HomePage">
 <head>
     <title>Home Page</title>
-    <script src="/Javascript/Bootstrap/JS/bootstrap.min.js"></script>
+    <script src="/Javascript/JQuery/jquery-1.11.3.min.js"></script>
     <script src="/Javascript/AngularJS/angular.min.js"></script>
     <script src="/Javascript/Bootstrap/JS/ui-bootstrap-tpls-0.13.0.min.js"></script>
+    <script src="/Javascript/home.js"></script>
+    <link href="/Javascript/Bootstrap/CSS/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div>
@@ -13,5 +15,11 @@
         <hr>
         <h1>Hello {{yourName}}!</h1>
     </div>
+
+
+    <div ng-controller="testController">
+        <p>username: {{test}}</p>
+    </div>
+
 </body>
 </html>
