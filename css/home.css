@@ -1,0 +1,55 @@
+/*----------NAVBAR STYLING START---------*/
+
+.brand
+{
+    padding-left: 10px;
+    padding-right:0px;
+    padding-top:0px;
+    padding-bottom:0px;
+}
+
+.brand img
+{
+    height: 80%;
+    width: inherit;
+    margin-top: 10%;
+}
+
+.navbarstyle
+{
+    background-color: #8B2C2C;
+    border-color: none;
+}
+
+.navbar-collapse
+{
+    border-color: #6B0000 !important;
+}
+
+.navbarbutton
+{
+    border-color: #6B0000 !important;
+    background-color: none;
+}
+
+.navbarbutton:focus
+{
+    background-color: #8B2C2C !important;
+}
+
+.navbarbutton:hover
+{
+    background-color: #6B0000 !important;
+}
+
+.navbarbutton > span
+{
+    background-color: white !important;
+}
+
+#linkslist > li > a
+{
+    color: white;
+}
+
+/*----------NAVBAR STYLING END---------*/

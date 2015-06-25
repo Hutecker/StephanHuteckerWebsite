@@ -1,8 +1,13 @@
 var app = angular.module('HomePage', ['ui.bootstrap']);
 
-app.controller('testController', function ($scope) {
+app.controller('NavBarController', function ($scope, $location) {
 
-    $scope.test = "Stephan";
+    //Used to redirect urls
+    $scope.isActive = function (viewLocation) {
+        return viewLocation === $location.path();
+    };
 
-
+    //Used to collapse nav bar button
+    $scope.isCollapsed = true;
 });
+
