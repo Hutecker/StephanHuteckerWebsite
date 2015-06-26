@@ -47,9 +47,26 @@
     background-color: white !important;
 }
 
-#linkslist > li > a
+#LinksList > li > a
 {
     color: white;
 }
 
-/*----------NAVBAR STYLING END---------*/
+/*----------NAVBAR STYLING START---------*/
+
+/*----------HOME PAGE STYLING START---------*/
+
+/*----------CONTACT PAGE STYLING START---------*/
+
+#contactSubmitButton
+{
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+textarea
+{
+    resize: none;
+}
+
+/*----------ABOUT PAGE STYLING START---------*/
