@@ -1,35 +1,40 @@
-var app = angular.module("HomePage", ["ui.bootstrap"]);
+var app = angular.module("HomePage", ["ui.bootstrap", "ngRoute"]);
 
-app.controller("PageContentController", function ($scope, $location, $rootScope) {
+app.config(function ($routeProvider, $locationProvider) {
+    $routeProvider
+        .when("/Home",
+        {
+            templateUrl: "HTML/Home.html",
+            controller: "HomePageController"
+        })
+        .when("/About",
+        {
+            templateUrl: "HTML/About.html",
+            controller: "AboutPageController"
+        })
+        .when("/Contact",
+        {
+            templateUrl: "HTML/Contact.html",
+            controller: "ContactPageController"
+        })
+        .otherwise({ redirectTo: "/Home" });
+
+    $locationProvider.html5Mode(true);
+});
+
+app.controller("PageContentController", function ($scope, $location, $rootScope, $route) {
 
     //Used to collapse nav bar button
     $scope.isCollapsed = true;
 
-    //This string determines what page is loaded
-    $scope.currentPage = "Home";
-
-    //This is called every time the URL changes
-    $scope.$on("$locationChangeStart", function (event, next, current) {
-        $scope.currentPage = event.currentScope.currentPage;
-    });
-
-    //Used to redirect urls
-    $scope.isActive = function (viewLocation) {
-        $("#HtmlTitle").text($scope.currentPage);
-        history.replaceState("", "", viewLocation);
-        //This enables using back and forward buttons in browser
-        //$location.path(viewLocation);
-        $scope.currentPage = viewLocation.replace("/", "");
-    };
 });
 
 app.controller("HomePageController", function ($scope) {
-
-
+    $scope.message = "test";
 });
 
 app.controller("AboutPageController", function ($scope) {
-
+    $scope.message = "test1";
 });
 
 app.controller("ContactPageController", function ($scope) {
@@ -49,7 +54,7 @@ app.controller("ContactPageController", function ($scope) {
     $scope.createMessage = function () {
         if ($scope.message == "")
             return "";
-     
+
         return $scope.message + "\n\n" + $scope.getFooter();
     }
 
@@ -57,7 +62,7 @@ app.controller("ContactPageController", function ($scope) {
     $scope.submit = function () {
         $.ajax({
             url: "PHP/MailHandler.php",
-            data: {to: $scope.email, message: $scope.createMessage()},
+            data: { to: $scope.email, message: $scope.createMessage() },
             success: function (response) {
                 //display success alert
             },

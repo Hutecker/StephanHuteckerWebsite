@@ -1,17 +1,20 @@
 <!doctype html>
 <html ng-app="HomePage">
 <head>
-    <title id="HtmlTitle">Home</title>
+
+    <base href="/">
     <script src="/Javascript/JQuery/jquery-1.11.3.min.js"></script>
     <script src="/Javascript/AngularJS/angular.min.js"></script>
+    <script src="/Javascript/AngularJS/angular-route.min.js"></script>
     <script src="/Javascript/Bootstrap/JS/ui-bootstrap-tpls-0.13.0.min.js"></script>
     <link href="/Javascript/Bootstrap/CSS/bootstrap.min.css" rel="stylesheet">
 
-    <script src="/Javascript/home.js"></script>
-    <link href="/CSS/home.css" rel="stylesheet" />
+    <script src="/Javascript/Home.js"></script>
+    <link href="/CSS/Home.css" rel="stylesheet" />
 
 </head>
 <body ng-controller="PageContentController" style="background-color: #AEAEAE">
+
     <!--Nav Bar Start-->
     <nav class="navbar navbarstyle">
         <div class="container-fluid">
@@ -22,54 +25,23 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand brand" href="#">
+                <a class="navbar-brand brand" href="/Home">
                     <img alt="Brand" src="/Assets/NavBarBrand.png">
                 </a>
             </div>
             <div class="navbar-collapse" ng-class="{collapse: isCollapsed}">
                 <ul class="nav navbar-nav" id="LinksList">
-                    <li><a id="Home" ng-click="isCollapsed = true; isActive('/Home');">Home</a></li>
-                    <li><a id="About" ng-click="isCollapsed = true; isActive('/About');">About</a></li>
-                    <li><a id="Contact" ng-click="isCollapsed = true; isActive('/Contact');">Contact</a></li>
+                    <li><a id="Home" href="/Home" ng-click="isCollapsed = true;">Home</a></li>
+                    <li><a id="About" href="About" ng-click="isCollapsed = true;">About</a></li>
+                    <li><a id="Contact" href="Contact" ng-click="isCollapsed = true;">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!--Home Page State-->
-    <div ng-show="currentPage == 'Home'" ng-controller="HomePageController">
-        <p>Home</p>
+
+    <div id="main">
+        <div ng-view></div>
     </div>
-    <!--About Page State-->
-    <div ng-show="currentPage == 'About'" ng-controller="AboutPageController">
-        <p>about</p>
-    </div>
-    <!--Contact Page State-->
-    <div ng-show="currentPage == 'Contact'" ng-controller="ContactPageController">
-        <div class="col-md-5">
-            <form role="form">
-                <div class="form-group">
-                    <label for="email">Email Address: </label>
-                    <input type="email" class="form-control" id="email" ng-model="email">
-                </div>
-                <div class="form-group">
-                    <label for="firstName">First Name: </label>
-                    <input type="text" class="form-control" id="pwd" ng-model="firstName">
-                </div>
-                <div class="form-group">
-                    <label for="lastName">Last Name: </label>
-                    <input type="text" class="form-control" id="pwd" ng-model="lastName">
-                </div>
-                <div>
-                    <label for="message">Message: </label>
-                    <textarea class="form-control" rows="3" ng-model="message"></textarea>
-                </div>
-                <button type="submit" class="btn btn-default" id="contactSubmitButton" ng-click="submit()">Submit</button>
-            </form>
-        </div>
-        <div class="col-md-7">
-            <label>Live Preview: </label>
-            <textarea class="form-control" readonly rows="16">{{createMessage()}}</textarea>
-        </div>
-    </div>
+    
 </body>
 </html>
