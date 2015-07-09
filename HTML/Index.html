@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app="HomePage">
+<head>
+
+    <base href="/">
+    <script src="/Javascript/JQuery/jquery-1.11.3.min.js"></script>
+    <script src="/Javascript/AngularJS/angular.min.js"></script>
+    <script src="/Javascript/AngularJS/angular-route.min.js"></script>
+    <script src="/Javascript/Bootstrap/JS/ui-bootstrap-tpls-0.13.0.min.js"></script>
+    <link href="/Javascript/Bootstrap/CSS/bootstrap.min.css" rel="stylesheet">
+
+    <script src="/Javascript/Home.js"></script>
+    <link href="/CSS/Home.css" rel="stylesheet" />
+
+</head>
+<body ng-controller="PageContentController" style="background-color: #AEAEAE">
+
+    <!--Nav Bar Start-->
+    <nav class="navbar navbarstyle">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle navbarbutton" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand brand" href="/Home">
+                    <img alt="Brand" src="/Assets/NavBarBrand.png">
+                </a>
+            </div>
+            <div class="navbar-collapse" ng-class="{collapse: isCollapsed}">
+                <ul class="nav navbar-nav" id="LinksList">
+                    <li><a id="Home" href="/Home" ng-click="isCollapsed = true;">Home</a></li>
+                    <li><a id="About" href="About" ng-click="isCollapsed = true;">About</a></li>
+                    <li><a id="Contact" href="Contact" ng-click="isCollapsed = true;">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Main view, views will be injected here-->
+    <div id="main">
+        <div ng-view></div>
+    </div>
+    
+</body>
+</html>

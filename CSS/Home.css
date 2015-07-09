@@ -1,0 +1,74 @@
+/*----------NAVBAR STYLING START---------*/
+
+.brand
+{
+    padding-left: 10px;
+    padding-right:0px;
+    padding-top:0px;
+    padding-bottom:0px;
+}
+
+.brand img
+{
+    height: 80%;
+    width: inherit;
+    margin-top: 10%;
+}
+
+.navbarstyle
+{
+    box-shadow: 0px 2px 9px;
+    border-radius: 0px !important;
+    background-color: #847E7E;
+    border-color: none;
+}
+
+.navbar-collapse
+{
+    border-color: #5A5050 !important;
+}
+
+.navbarbutton
+{
+    border-color: #5A5050 !important;
+    background-color: none;
+}
+
+.navbarbutton:focus
+{
+    background-color: #847E7E !important;
+}
+
+.navbarbutton:hover
+{
+    background-color: #5A5050 !important;
+}
+
+.navbarbutton > span
+{
+    background-color: white !important;
+}
+
+#LinksList > li > a
+{
+    color: white;
+}
+
+/*----------NAVBAR STYLING START---------*/
+
+/*----------HOME PAGE STYLING START---------*/
+
+/*----------CONTACT PAGE STYLING START---------*/
+
+#contactSubmitButton
+{
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+textarea
+{
+    resize: none;
+}
+
+/*----------ABOUT PAGE STYLING START---------*/
