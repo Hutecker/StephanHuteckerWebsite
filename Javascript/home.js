@@ -1,8 +1,9 @@
 var app = angular.module("HomePage", ["ui.bootstrap", "ngRoute"]);
 
 app.config(function ($routeProvider, $locationProvider) {
+    //Controls the routing for the site
     $routeProvider
-        .when("/Home",
+        .when("/",
         {
             templateUrl: "HTML/Home.html",
             controller: "HomePageController"
@@ -17,7 +18,7 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: "HTML/Contact.html",
             controller: "ContactPageController"
         })
-        .otherwise({ redirectTo: "/Home" });
+        .otherwise({ redirectTo: "/" });
 
     $locationProvider.html5Mode(true);
 });
