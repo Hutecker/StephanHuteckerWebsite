@@ -6,7 +6,7 @@
     <script src="/Javascript/JQuery/jquery-1.11.3.min.js"></script>
     <script src="/Javascript/AngularJS/angular.min.js"></script>
     <script src="/Javascript/AngularJS/angular-route.min.js"></script>
-    <script src="/Javascript/AngularJS/angular-animate.min.js"></script>
+    <script src="/Javascript/AngularJS/angular-animate.js"></script> <!--This need to be minified file once bug is fixed in current version--> 
     <script src="/Javascript/Bootstrap/JS/ui-bootstrap-tpls-0.13.0.min.js"></script>
     <link href="/Javascript/Bootstrap/CSS/bootstrap.min.css" rel="stylesheet">
 
@@ -41,8 +41,8 @@
     </nav>
 
     <!--Main view, views will be injected here-->
-    <div id="main" class="animation-container">
-        <div ng-view class="view-animation"></div>
+    <div class="animation-container">
+        <div ng-view></div>
     </div>
     
 </body>

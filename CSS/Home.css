@@ -70,8 +70,72 @@
 
 /*----------ANIMATION STYLING START---------*/
 
+.animation-container {
+  position: absolute;
+  height: 100% !important;
+  width: 100% !important;
+  overflow: hidden;
+}
 
+/*Scroll page input from the right*/
+.view-animation-right {
+  padding: 10px;
+}
 
+.view-animation-right.ng-enter, .view-animation-right.ng-leave {
+  -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) .2s;
+  transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) .2s;
+
+  display: block;
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+}
+
+.view-animation-right.ng-enter {
+  left: 100%;
+}
+.view-animation-right.ng-enter.ng-enter-active {
+  left: 0;
+}
+.view-animation-right.ng-leave.ng-leave-active {
+  left: -100%;
+}
+
+/*Scroll page input from the left*/
+.view-animation-left {
+  padding: 10px;
+}
+
+.view-animation-left.ng-enter, .view-animation-left.ng-leave {
+  -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) .2s;
+  transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) .2s;
+
+  display: block;
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+}
+
+.view-animation-left.ng-enter {
+  left: -100%;
+}
+.view-animation-left.ng-enter.ng-enter-active {
+  left: 0;
+}
+.view-animation-left.ng-leave.ng-leave-active {
+  left: 100%;
+}
 /*----------HOME PAGE STYLING START---------*/
 
 /*----------CONTACT PAGE STYLING START---------*/

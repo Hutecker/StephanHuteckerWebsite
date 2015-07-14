@@ -1,4 +1,4 @@
-var app = angular.module("HomePage", ["ui.bootstrap", "ngRoute"]);
+var app = angular.module("HomePage", ["ui.bootstrap", "ngRoute", "ngAnimate"]);
 
 app.config(function ($routeProvider, $locationProvider) {
     //Controls the routing for the site
