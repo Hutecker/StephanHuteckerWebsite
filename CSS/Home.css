@@ -1,3 +1,11 @@
+/*----------PAGE STYLING START---------*/
+
+.page
+{
+    background-color: #AEAEAE;
+}
+
+
 /*----------NAVBAR STYLING START---------*/
 
 .brand
@@ -15,7 +23,7 @@
     margin-top: 10%;
 }
 
-.navbarstyle
+.nav-bar-style
 {
     box-shadow: 0px 0px 0px;
     border-radius: 0px !important;
@@ -29,42 +37,46 @@
     border-color: #5A5050 !important;
 }
 
-.navbarbutton
+.nav-bar-button
 {
     border-color: #5A5050 !important;
     background-color: none;
 }
 
-.navbarbutton:focus
+.nav-bar-button:focus
 {
     background-color: #847E7E !important;
 }
 
-.navbarbutton:hover
+.nav-bar-button:hover
 {
     background-color: #5A5050 !important;
 }
 
-.navbarbutton > span
+.nav-bar-button > span
 {
     background-color: white !important;
 }
 
-#LinksList > li > a
+#LinkList > li > a
 {
     color: white;
 }
 
-#LinksList > li > a:hover, #LinksList > li > a:focus {
+#LinkList > li > a:hover, #LinkList > li > a:focus {
     background-color: #5A5050;
     color: white;
 }
+
+/*----------ANIMATION STYLING START---------*/
+
+
 
 /*----------HOME PAGE STYLING START---------*/
 
 /*----------CONTACT PAGE STYLING START---------*/
 
-#contactSubmitButton
+#ContactSubmitButton
 {
     margin-top: 15px;
     margin-bottom: 20px;
@@ -76,3 +88,4 @@ textarea
 }
 
 /*----------ABOUT PAGE STYLING START---------*/
+
