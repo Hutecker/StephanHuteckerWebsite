@@ -83,8 +83,8 @@
 }
 
 .view-animation-right.ng-enter, .view-animation-right.ng-leave {
-  -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) .2s;
-  transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) .2s;
+  -webkit-transition: all ease-in-out .2s;
+  transition: all ease-in-out .2s;
 
   display: block;
   width: 100%;
@@ -113,8 +113,8 @@
 }
 
 .view-animation-left.ng-enter, .view-animation-left.ng-leave {
-  -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) .2s;
-  transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) .2s;
+  -webkit-transition: all ease-in-out .2s;
+  transition: all ease-in-out .2s;
 
   display: block;
   width: 100%;
