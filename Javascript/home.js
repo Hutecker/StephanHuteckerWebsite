@@ -28,6 +28,25 @@ app.controller("PageContentController", function ($scope, $location, $rootScope,
     //Used to collapse nav bar button
     $scope.isCollapsed = true;
 
+    //This is used to select the correct sliding animation
+    $scope.pageArray = ['Home', 'About', 'Contact'];
+
+    //Value is either true or false
+    $scope.slideAnimationRight = true;
+
+    //Decides whether the slide right or left animation should be used
+    $scope.ChooseAnimation = function (upcomingLocation) {
+        var urlArray = $route.current.templateUrl.split("/") || null;
+        if (urlArray == null) return;
+        var currentLocation = (urlArray[urlArray.length - 1]).split(".")[0];
+
+        if($scope.pageArray.indexOf(upcomingLocation) > $scope.pageArray.indexOf(currentLocation)){
+            $scope.slideAnimationRight = false;
+        }
+        else if ($scope.pageArray.indexOf(upcomingLocation) < $scope.pageArray.indexOf(currentLocation)) {
+            $scope.slideAnimationRight = true;
+        }
+    }
 });
 
 app.controller("HomePageController", function ($scope) {
@@ -47,23 +66,23 @@ app.controller("ContactPageController", function ($scope) {
     $scope.message = "";
 
     //Creates footer
-    $scope.getFooter = function () {
+    $scope.GetFooter = function () {
         return "Best,\n" + $scope.firstName + " " + $scope.lastName;
     }
 
     //Creates entire message
-    $scope.createMessage = function () {
+    $scope.CreateMessage = function () {
         if ($scope.message == "")
             return "";
 
-        return $scope.message + "\n\n" + $scope.getFooter();
+        return $scope.message + "\n\n" + $scope.GetFooter();
     }
 
     //Sends out the email
-    $scope.submit = function () {
+    $scope.Submit = function () {
         $.ajax({
             url: "PHP/MailHandler.php",
-            data: { to: $scope.email, message: $scope.createMessage() },
+            data: { to: $scope.email, message: $scope.CreateMessage() },
             success: function (response) {
                 //display success alert
             },
