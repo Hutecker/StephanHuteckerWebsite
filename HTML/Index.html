@@ -32,11 +32,11 @@
             </div>
             <div class="navbar-collapse" ng-class="{collapse: isCollapsed}">
                 <ul class="nav navbar-nav" id="LinkList">
-                    <li><a id="Home" href="Home" ng-click="isCollapsed = true; ChooseAnimation('Home');">Home</a></li>
-                    <li><a id="About" href="About" ng-click="isCollapsed = true; ChooseAnimation('About');">About</a></li>
-                    <li><a id="Contact" href="Contact" ng-click="isCollapsed = true; ChooseAnimation('Contact');">Contact</a></li>
-                    <li><a id="AboutSite" href="AboutSite" ng-click="isCollapsed = true; ChooseAnimation('AboutSite');">About This Site</a></li>
-                    <li><a id="CurrentProjects" href="CurrentProjects" ng-click="isCollapsed = true; ChooseAnimation('CurrentProjects');">Current Projects</a></li>
+                    <li><a id="Home" href="Home" ng-class="{active: IsActive('/')}" ng-click="isCollapsed = true; ChooseAnimation('Home');">Home</a></li>
+                    <li><a id="About" href="About" ng-class="{active: IsActive('/About')}" ng-click=" iscollapsed=true; ChooseAnimation('about');">About</a></li>
+                    <li><a id="Contact" href="Contact" ng-class="{active: IsActive('/Contact')}" ng-click="isCollapsed = true; ChooseAnimation('Contact');">Contact</a></li>
+                    <li><a id="CurrentProjects" href="CurrentProjects" ng-class="{active: IsActive('/CurrentProjects')}" ng-click="isCollapsed = true; ChooseAnimation('CurrentProjects');">Current Projects</a></li>
+                    <li><a id="AboutSite" href="AboutSite" ng-class="{active: IsActive('/AboutSite')}" ng-click="isCollapsed = true; ChooseAnimation('AboutSite');">About This Site</a></li>
                 </ul>
             </div>
         </div>

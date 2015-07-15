@@ -39,7 +39,7 @@ app.controller("PageContentController", function ($scope, $location, $rootScope,
     $scope.isCollapsed = true;
 
     //This is used to select the correct sliding animation
-    $scope.pageArray = ['Home', 'About', 'Contact', 'AboutSite', 'CurrentProjects'];
+    $scope.pageArray = ['Home', 'About', 'Contact', 'CurrentProjects', 'AboutSite'];
 
     //Value is either true or false
     $scope.slideAnimationRight = true;
@@ -57,6 +57,10 @@ app.controller("PageContentController", function ($scope, $location, $rootScope,
             $scope.slideAnimationRight = false;
         }
     }
+
+    $scope.IsActive = function (currentLocation) {
+        return currentLocation === $location.path();
+    };
 });
 
 app.controller("HomePageController", function ($scope) {
