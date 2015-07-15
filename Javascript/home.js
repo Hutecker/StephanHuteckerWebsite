@@ -18,6 +18,16 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: "HTML/Contact.html",
             controller: "ContactPageController"
         })
+        .when("/AboutSite",
+        {
+            templateUrl: "HTML/AboutSite.html",
+            controller: "AboutSiteController"
+        })
+        .when("/CurrentProjects",
+        {
+            templateUrl: "HTML/CurrentProjects.html",
+            controller: "CurrentProjectsController"
+        })
         .otherwise({ redirectTo: "/" });
 
     $locationProvider.html5Mode(true);
@@ -29,7 +39,7 @@ app.controller("PageContentController", function ($scope, $location, $rootScope,
     $scope.isCollapsed = true;
 
     //This is used to select the correct sliding animation
-    $scope.pageArray = ['Home', 'About', 'Contact'];
+    $scope.pageArray = ['Home', 'About', 'Contact', 'AboutSite', 'CurrentProjects'];
 
     //Value is either true or false
     $scope.slideAnimationRight = true;
@@ -41,10 +51,10 @@ app.controller("PageContentController", function ($scope, $location, $rootScope,
         var currentLocation = (urlArray[urlArray.length - 1]).split(".")[0];
 
         if($scope.pageArray.indexOf(upcomingLocation) > $scope.pageArray.indexOf(currentLocation)){
-            $scope.slideAnimationRight = false;
+            $scope.slideAnimationRight = true;
         }
         else if ($scope.pageArray.indexOf(upcomingLocation) < $scope.pageArray.indexOf(currentLocation)) {
-            $scope.slideAnimationRight = true;
+            $scope.slideAnimationRight = false;
         }
     }
 });
@@ -92,5 +102,13 @@ app.controller("ContactPageController", function ($scope) {
         });
     }
 
+});
+
+app.controller("AboutSiteController", function ($scope) {
+    $scope.message = "test2";
+});
+
+app.controller("CurrentProjectsController", function ($scope) {
+    $scope.message = "test3";
 });
 
